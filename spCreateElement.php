@@ -15,7 +15,7 @@ $arStages = $stage->getStatusId();
 
 $data = [
 'TITLE' => 'Заявка {{ID элемента}}',
-'ASSIGNED_BY_ID'=>"{{Кем создан}}",
+'ASSIGNED_BY_ID'=>$userId,
 'UF_CRM_2_1686838752118' => "{{Список нужд (Перечислить через запятую)}}"
 ];
 $item = $factory ->createItem($data);
