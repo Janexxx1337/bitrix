@@ -1,22 +1,15 @@
 <?php
 
-ini_set('display_errors', 'On');
-error_reporting(E_ALL);
-require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
-require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_after.php");
-
 use Bitrix\Crm\Service\Container;
 use Bitrix\Crm\Item;
 
-$title = $_POST['title'];
-$username = $_POST['username'];
-$sum = $_POST['sum'];
-$parentId = $_POST['parentId'];
+$title = "22222";
 
-function createSmartProcessElement($title, $username, $sum)
+
+function createSmartProcessElement($title)
 {
     // Создание элемента смарт-процесса
-    $typeid = 160; // Замените на соответствующий идентификатор смарт-процесса типа int
+    $typeid = 135; // Замените на соответствующий идентификатор смарт-процесса типа int
     $factory = Container::getInstance()->getFactory($typeid);
 
     if (!$factory) {
@@ -28,9 +21,7 @@ function createSmartProcessElement($title, $username, $sum)
     ]);
 
     $fields = [
-        'UF_CRM_5_1685541299' => $title,
-        'UF_CRM_5_1685544615' => $username,
-        'UF_CRM_5_1685544814' => $sum,
+
         'FIELDS[TITLE]' => $title
 
     ];
@@ -51,7 +42,7 @@ function createSmartProcessElement($title, $username, $sum)
 }
 
 try {
-    $elementId = createSmartProcessElement($title, $username, $sum);
+    $elementId = createSmartProcessElement($title);
     echo json_encode(['success' => true, 'elementId' => $elementId]);
 } catch (\Exception $e) {
     echo json_encode(['success' => false, 'error' => $e->getMessage()]);
