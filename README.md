@@ -12,3 +12,11 @@
         
 #### Понятное указание структуры папок
         https://tokmakov.msk.ru/blog/item/207
+
+ #### Нагладная статья по созданию лида через форму
+
+        http://odlord.ru/bitrix24-rest-api-sozdanie-lida-cherez-formu/
+
+ #### Статья по созданию лида
+        https://dev.1c-bitrix.ru/rest_help/crm/cases/add/form_lead.php
+        
